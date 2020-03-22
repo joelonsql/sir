@@ -1,5 +1,6 @@
-# sis
 Detta är ett inofficiellt projekt som försöker modellera data från det Svenska Intensivvårdsregistet.
+
+Jag är en glad amatör som precis börjat lära mig R, så lita inte på något av detta utan verifiera allt med experter först. Jag har dock inte sett några liknande modeller från några myndigheter, så jag tänkte att det kanske behövs en dålig modell först som de förhoppningsvis åtminstone kan konstruktivt kritisera.
 
 Hypotesen är att behovet av antal intensivvårdsplatser borde till en början vara exponentiellt.
 
