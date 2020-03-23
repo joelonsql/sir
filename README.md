@@ -19,17 +19,17 @@ lm(formula = log2(IVAFall) ~ Dag, data = data)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.33730 -0.18198  0.02853  0.15986  0.37650 
+-0.34528 -0.17058  0.03428  0.11596  0.39247 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  0.90153    0.10380   8.685 3.09e-07 ***
-Dag          0.34797    0.01013  34.349 1.12e-15 ***
+(Intercept) 0.867598   0.097671   8.883 2.32e-07 ***
+Dag         0.353954   0.009532  37.134 3.53e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.2046 on 15 degrees of freedom
-Multiple R-squared:  0.9874,	Adjusted R-squared:  0.9866 
-F-statistic:  1180 on 1 and 15 DF,  p-value: 1.122e-15
+Residual standard error: 0.1925 on 15 degrees of freedom
+Multiple R-squared:  0.9892,	Adjusted R-squared:  0.9885 
+F-statistic:  1379 on 1 and 15 DF,  p-value: 3.528e-16
 ```
 
