@@ -12,7 +12,7 @@ signif.num <- function(x) {
 # Daily data from: https://portal.icuregswe.org/siri/report/vtfstart-corona
 
 # iva <- c(2,1,2,0,2,0,1,3,6,7,6,4,14,9,18,10,8)
-iva <- c(2,1,2,0,2,0,1,3,6,7,6,4,14,10,20,12,15)
+iva <- c(2,1,2,0,2,0,1,3,6,7,6,4,14,13,22,16,20)
 
 data <- data.frame(Dag = 1:17, IVAFall = cumsum(iva), Nya = iva)
 

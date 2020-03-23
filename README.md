@@ -8,8 +8,8 @@ Jag är en glad amatör som precis börjat lära mig R, så lita inte på något
 
 Hypotesen är att behovet av antal intensivvårdsplatser borde till en början vara exponentiellt.
 
-![SIR modell Linear scale](https://github.com/joelonsql/sir/blob/master/90f0cb599cedf89b9647550f8fdad349d3b13765.png?raw=true "SIR modell Linear scale")
-![SIR modell Logarithmic scale](https://github.com/joelonsql/sir/blob/master/a4f8ea3b2eb599fec7044e5ce827f87a951933fa.png?raw=true "SIR modell Logarithmic scale")
+![SIR modell Linear scale](https://github.com/joelonsql/sir/blob/master/80cde552f04f89b6a74f84f49f2ca48fe636e410.png?raw=true "SIR modell Linear scale")
+![SIR modell Logarithmic scale](https://github.com/joelonsql/sir/blob/master/5915da4c322fdef299c4fc2960ff47af026ad20c.png?raw=true "SIR modell Logarithmic scale")
 
 Modellen är byggd i R. För er som har koll på statistik borde förhoppningsvis nedanstående säga er något. Min amatörmässiga uppfattning är att datapunkterna mycket väl korrelerar med en exponentiell funktion.
 
