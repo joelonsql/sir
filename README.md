@@ -4,7 +4,7 @@ Jag är en glad amatör som precis börjat lära mig R, så lita inte på något
 
 Hypotesen är att behovet av antal intensivvårdsplatser borde till en början vara exponentiellt.
 
-![SIR modell](https://github.com/joelonsql/sir/blob/master/sir.png?raw=true "SIR modell")
+![SIR modell](https://github.com/joelonsql/sir/blob/master/sir_20200323.png?raw=true "SIR modell")
 
 Modellen är byggd i R. För er som har koll på statistik borde förhoppningsvis nedanstående säga er något. Min amatörmässiga uppfattning är att datapunkterna mycket väl korrelerar med en exponentiell funktion.
 
