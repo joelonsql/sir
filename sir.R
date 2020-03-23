@@ -71,7 +71,8 @@ plot <- ggplot(data, aes(x=Dag)) +
     subtitle=paste(
       "Rådata från: https://portal.icuregswe.org/siri/report/vtfstart-corona"
     )
-  )
+  ) +
+  ylab("IVA")
 
 print(plot)
 
