@@ -10,7 +10,7 @@ signif.num <- function(x) {
 }
 
 # Daily data from: https://portal.icuregswe.org/siri/report/vtfstart-corona
-data <- data.frame(Dag = 1:17, IVAFall = cumsum(c(2,1,2,0,2,0,1,3,6,7,6,4,14,9,18,10,6)))
+data <- data.frame(Dag = 1:17, IVAFall = cumsum(c(2,1,2,0,2,0,1,3,6,7,6,4,14,9,18,10,8)))
 
 # Assume exponential curve
 model <- lm(log2(IVAFall) ~ Dag, data);
@@ -35,7 +35,7 @@ p_values <- sapply(model_summary$coefficients[,4],signif.num)
 
 data$Dag <- as.Date("2020-03-05") + data$Dag
 
-ggplot(data, aes(x=Dag)) +
+plot <- ggplot(data, aes(x=Dag)) +
   geom_point(aes(y=IVAFall, color="Historik")) +
   geom_line(aes(y=Model, color="Modell")) +
   geom_point(aes(y=Prediction, color="Prognos")) +
@@ -59,5 +59,9 @@ ggplot(data, aes(x=Dag)) +
       "Rådata från: https://portal.icuregswe.org/siri/report/vtfstart-corona"
     )
   )
+
+print(plot)
+
+print(plot +scale_y_log10())
 
 model_summary
