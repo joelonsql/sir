@@ -2,7 +2,7 @@ Detta är ett inofficiellt projekt som försöker modellera data från det Svens
 
 ![SIR url](https://github.com/joelonsql/sir/blob/master/sirurl.png?raw=true "SIR url")
 
-SIR blir ofta överbelastat, så länken ovan är en bild för att reducera antalet onödiga besök. Undika att besöka SIR om det inte är absolut nödvändigt. Besök istället någon av sidorna som cachear dess data, såsom [https://c19.se/](https://c19.se/) där SIR-data snart kommer att publiceras om det inte redan är gjort.
+SIR blir ofta överbelastat, så länken ovan är en bild för att reducera antalet onödiga besök. Undika att besöka SIR om det inte är absolut nödvändigt.
 
 Jag är en glad amatör som precis börjat lära mig R, så lita inte på något av detta utan verifiera allt med experter först. Jag har dock inte sett några liknande modeller från några myndigheter, så jag tänkte att det kanske behövs en dålig modell först som de förhoppningsvis åtminstone kan konstruktivt kritisera.
 
