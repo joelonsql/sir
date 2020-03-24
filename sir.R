@@ -12,7 +12,7 @@ signif.num <- function(x) {
 # Daily data from: https://portal.icuregswe.org/siri/report/vtfstart-corona
 
 # iva <- c(2,1,2,0,2,0,1,3,6,7,6,4,14,9,18,10,8)
-iva <- c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,23,16,22)
+iva <- c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,24,16,25)
 
 data <- data.frame(Dag = 1:17, IVAFall = cumsum(iva), Nya = iva)
 
@@ -45,7 +45,7 @@ plot <- ggplot(data, aes(x=Dag)) +
   geom_col(aes(y=Nya, fill="Historik"), show.legend = FALSE) +
   geom_col(aes(y=PrognosNya, fill="Prognos"), show.legend = FALSE) +
   geom_point(aes(y=IVAFall, color="Historik")) +
-  geom_line(aes(y=Modell, color="Modell")) +
+  geom_line(aes(y=Modell, color="Prognos")) +
   geom_point(aes(y=Prognos, color="Prognos")) +
 #  geom_ribbon(
 #    aes(
@@ -68,9 +68,10 @@ plot <- ggplot(data, aes(x=Dag)) +
             vjust = "inward", hjust = "inward",
             show.legend = FALSE, check_overlap = TRUE) +
   theme_minimal() +
-  ggtitle("Antal nyinskrivna intensivvårdtillfällen med Coronavirus i Sverige (kumulativt)",
+  ggtitle("Antal nyinskrivna intensivvårdtillfällen med Coronavirus i Sverige",
     subtitle=paste(
-      "Rådata från: https://portal.icuregswe.org/siri/report/vtfstart-corona"
+      "Rådata från: https://portal.icuregswe.org/siri/report/vtfstart-corona",
+      "\nStaplar=nya fall, Linje=modell, Prickar=Historik/prognos"
     )
   ) +
   ylab("IVA")
