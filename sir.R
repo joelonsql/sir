@@ -12,9 +12,9 @@ signif.num <- function(x) {
 # Daily data from: https://portal.icuregswe.org/siri/report/vtfstart-corona
 
 # iva <- c(2,1,2,0,2,0,1,3,6,7,6,4,14,9,18,10,8)
-iva <- c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,24,16,25)
+iva <- c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,23,16,26,38)
 
-data <- data.frame(Dag = 1:17, IVAFall = cumsum(iva), Nya = iva)
+data <- data.frame(Dag = 1:18, IVAFall = cumsum(iva), Nya = iva)
 
 # Assume exponential curve
 model <- lm(log2(IVAFall) ~ Dag, data);
@@ -27,7 +27,7 @@ data$Prognos <- NA
 data$PrognosNya <- NA
 
 # Predict next 7 days
-for (d in 18:24) {
+for (d in 19:25) {
   data <- add_row(
     data,
     Dag=d,

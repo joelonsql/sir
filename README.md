@@ -8,8 +8,8 @@ Jag är en glad amatör som precis börjat lära mig R, så lita inte på något
 
 Hypotesen är att behovet av antal intensivvårdsplatser borde till en början vara exponentiellt.
 
-![SIR modell Linear scale](https://github.com/joelonsql/sir/blob/master/b5eb3caada69ce37812514187599779ba5042910.png?raw=true "SIR modell Linear scale")
-![SIR modell Logarithmic scale](https://github.com/joelonsql/sir/blob/master/c31d5996808bb8cf8800e22a8e4a442d7c99e2db.png?raw=true "SIR modell Logarithmic scale")
+![SIR modell Linear scale](https://github.com/joelonsql/sir/blob/master/292ae073dbd741995255b5ef34c9382553608ef9.png?raw=true "SIR modell Linear scale")
+![SIR modell Logarithmic scale](https://github.com/joelonsql/sir/blob/master/15088df18b5b86ecbabdc460e537fc4377793bc6.png?raw=true "SIR modell Logarithmic scale")
 
 Modellen är byggd i R. För er som har koll på statistik borde förhoppningsvis nedanstående säga er något. Min amatörmässiga uppfattning är att datapunkterna mycket väl korrelerar med en exponentiell funktion.
 
@@ -19,17 +19,17 @@ lm(formula = log2(IVAFall) ~ Dag, data = data)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.35876 -0.13618  0.02143  0.09068  0.42063 
+-0.35787 -0.10411  0.01890  0.08419  0.41932 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 0.808206   0.096507   8.375 4.88e-07 ***
-Dag         0.364364   0.009418  38.687  < 2e-16 ***
+(Intercept) 0.811155   0.090174   8.995 1.17e-07 ***
+Dag         0.363816   0.008331  43.672  < 2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1902 on 15 degrees of freedom
-Multiple R-squared:  0.9901,	Adjusted R-squared:  0.9894 
-F-statistic:  1497 on 1 and 15 DF,  p-value: < 2.2e-16
+Residual standard error: 0.1834 on 16 degrees of freedom
+Multiple R-squared:  0.9917,	Adjusted R-squared:  0.9912 
+F-statistic:  1907 on 1 and 16 DF,  p-value: < 2.2e-16
 ```
 
