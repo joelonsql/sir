@@ -62,3 +62,25 @@ Residual standard error: 0.1648 on 17 degrees of freedom
 Multiple R-squared:  0.9944,	Adjusted R-squared:  0.9941 
 F-statistic:  3023 on 1 and 17 DF,  p-value: < 2.2e-16
 ```
+
+![SIR2](https://github.com/joelonsql/sir/blob/master/sir2_2020-03-27.png?raw=true "SIR2")
+
+```
+Call:
+lm(formula = log2(cumsum(icu + deaths)) ~ days)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.30264 -0.06776 -0.00361  0.09744  0.36488 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.820415   0.075298   10.90 2.35e-09 ***
+days        0.378879   0.006286   60.28  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1621 on 18 degrees of freedom
+Multiple R-squared:  0.9951,	Adjusted R-squared:  0.9948 
+F-statistic:  3633 on 1 and 18 DF,  p-value: < 2.2e-16
+```

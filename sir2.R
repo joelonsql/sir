@@ -14,8 +14,8 @@ signif.num <- function(x) {
 # deaths: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv#L207
 
 first_date <- as.Date("2020-03-05")
-icu    <-        c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,23,16,27,40,38)
-deaths <- diff(c(0,0,0,0,0,0,1,1,1,2,3,6,7,10,11,16,20,21,25,36))
+icu    <-        c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,24,17,27,42,42,33)
+deaths <- diff(c(0,0,0,0,0,0,1,1,1,2,3,6,7,10,11,16,20,21,25,36,62))
 
 stopifnot(length(icu) == length(deaths))
 
@@ -30,20 +30,35 @@ future_days <- length(icu):(length(icu)+7)
 
 forecast <- diff(as.integer(2 ^ (future_days * model$coefficients[2] + model$coefficients[1])))
 
+prognos_legend <- "Prognos behov nya intensivvård"
+
 data <- rbind(
   data.frame(day = days, type = "Nya intensivvård", count = icu),
   data.frame(day = days, type = "Nya döda", count = deaths),
-  data.frame(day = (length(icu)+1):(length(icu)+7), type = "Prognos behov nya intensivvård", count = forecast)
+  data.frame(day = (length(icu)+1):(length(icu)+7), type = prognos_legend, count = forecast)
 )
 
+cumulative <- data %>% group_by(day) %>% summarise(type = "Kumulativt", count = sum(count)) %>% ungroup()
+
+cumulative$count <- cumsum(cumulative$count)
+
+# data <- rbind(data, cumulative)
+
 data$day <- first_date + data$day
+cumulative$day <- first_date + cumulative$day
 
 plot <- ggplot(data, aes(x=day)) +
   geom_col(aes(y=count, fill=type)) +
+#  geom_line(data=cumulative, aes(y=count, color="Kumulativ"), show.legend = FALSE) +
+#  geom_point(data=cumulative, aes(y=count, color="Kumulativ"), show.legend = FALSE) +
   geom_text(aes(y = count, label = count),
             vjust = "inward", hjust = "inward",
             show.legend = FALSE, check_overlap = TRUE) +
+#  geom_text(data=cumulative, aes(y = count, label = count),
+#            vjust = "inward", hjust = "inward",
+#            show.legend = FALSE, check_overlap = TRUE) +
   geom_vline(xintercept = Sys.Date()) +
+  scale_color_discrete(aesthetics = c("color", "fill")) +
   theme_minimal() +
   ggtitle("Antal nyinskrivna intensivvårdtillfällen och döda pga Coronavirus i Sverige",
           subtitle=paste(
