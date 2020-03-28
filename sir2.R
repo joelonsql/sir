@@ -14,8 +14,8 @@ signif.num <- function(x) {
 # deaths: https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv#L207
 
 first_date <- as.Date("2020-03-05")
-icu    <-        c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,24,17,27,42,42,33)
-deaths <- diff(c(0,0,0,0,0,0,1,1,1,2,3,6,7,10,11,16,20,21,25,36,62))
+icu    <-        c(2,1,2,0,2,0,1,3,6,7,6,3,15,13,24,17,27,43,42,33,29)
+deaths <- diff(c(0,0,0,0,0,0,1,1,1,2,3,6,7,10,11,16,20,21,25,36,62,77))
 
 stopifnot(length(icu) == length(deaths))
 
@@ -74,3 +74,28 @@ plot <- ggplot(data, aes(x=day)) +
 print(plot)
 
 print(model_summary)
+
+
+ggplot(data=data.frame(day=1:length(icu), count=icu+deaths), aes(x=day)) +
+  geom_line(aes(y=count)) +
+  #  geom_line(data=cumulative, aes(y=count, color="Kumulativ"), show.legend = FALSE) +
+  #  geom_point(data=cumulative, aes(y=count, color="Kumulativ"), show.legend = FALSE) +
+  geom_text(aes(y = count, label = count),
+            vjust = "inward", hjust = "inward",
+            show.legend = FALSE, check_overlap = TRUE) +
+  #  geom_text(data=cumulative, aes(y = count, label = count),
+  #            vjust = "inward", hjust = "inward",
+  #            show.legend = FALSE, check_overlap = TRUE) +
+  theme_minimal() +
+  ggtitle("Antal nyinskrivna intensivvårdtillfällen och döda pga Coronavirus i Sverige",
+          subtitle=paste(
+            "Rådata från:",
+            "\nhttps://portal.icuregswe.org/siri/report/vtfstart-corona",
+            "\nhttps://github.com/CSSEGISandData/COVID-19",
+            "\nAdjusted R-squared:", round(model_summary$adj.r.squared,3)
+          )
+  ) +
+  ylab("Människoliv") +
+  xlab("Datum") +
+  geom_smooth(aes(y=count), method="lm") +
+  scale_y_log10()

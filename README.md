@@ -84,3 +84,14 @@ Residual standard error: 0.1621 on 18 degrees of freedom
 Multiple R-squared:  0.9951,	Adjusted R-squared:  0.9948 
 F-statistic:  3633 on 1 and 18 DF,  p-value: < 2.2e-16
 ```
+
+# Hypotes 3
+
+Hypotesen är att dödsdata från Hubei är generellt karakteristisk för COVID-19,
+och att exponenten i en 4PL logistik kurva bör kunna härledas från denna data.
+
+Låt oss vidare anta att totalt antal döda blir 0.1% av populationen,
+vilket utvecklingen i Italien tyder på, om trenden håller i sig.
+
+![2020-03-28](https://github.com/joelonsql/sir/blob/master/2020-03-28.png?raw=true "2020-03-28")
+[Interaktiv graf - 2020-03-28](https://rpubs.com/purrpurr/591004)
