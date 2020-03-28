@@ -35,6 +35,9 @@ data$day <- start_date + data$day
 
 inflection_date <- start_date + c
 
+predict_total_tomorrow <- filter(data,day==Sys.Date())$predict
+predict_new_tomorrow <- predict_total_tomorrow - filter(data,day==Sys.Date()-1)$deaths
+
 data %>%
   plot_ly(
     x = ~day,
@@ -47,8 +50,9 @@ data %>%
   layout(
     title = paste(
       "COVID-19 - Estimerad dödskurva - Sverige",
-      "\nInflektionspunkt:", inflection_date,
-      "Prognos", Sys.Date()+1, ":", filter(data,day==Sys.Date())$predict
+      "\nInflektionspunkt: ", inflection_date,
+      " Prognos ", Sys.Date()+1, " : ", predict_total_tomorrow, " (+", predict_new_tomorrow, ")",
+      sep=""
     ),
     yaxis = list(title="Antal döda", type="log"),
     xaxis = list(title=paste("Skapad",Sys.Date()))
