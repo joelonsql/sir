@@ -51,11 +51,11 @@ data %>%
     title = paste(
       "COVID-19 - Estimerad dödskurva - Sverige",
       "\nInflektionspunkt: ", inflection_date,
-      " Prognos ", Sys.Date()+1, " : ", predict_total_tomorrow, " (+", predict_new_tomorrow, ")",
+      " Prognos ", Sys.Date(), " : ", predict_total_tomorrow, " (+", predict_new_tomorrow, ")",
       sep=""
     ),
     yaxis = list(title="Antal döda", type="log"),
-    xaxis = list(title=paste("Skapad",Sys.Date()))
+    xaxis = list(title="Datum")
   ) %>%
   add_segments(x = inflection_date, xend = inflection_date, y = 0, yend = deceased, showlegend = FALSE)
 
