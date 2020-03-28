@@ -93,5 +93,7 @@ och att exponenten i en 4PL logistik kurva bör kunna härledas från denna data
 Låt oss vidare anta att totalt antal döda blir 0.1% av populationen,
 vilket utvecklingen i Italien tyder på, om trenden håller i sig.
 
-![2020-03-28](https://github.com/joelonsql/sir/blob/master/2020-03-28.png?raw=true "2020-03-28")
+![2020-03-28](https://github.com/joelonsql/sir/blob/master/deaths_2020-03-28.png?raw=true "2020-03-28")
 [Interaktiv graf - 2020-03-28](https://rpubs.com/purrpurr/591004)
+
+
